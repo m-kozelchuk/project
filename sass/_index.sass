@@ -1,0 +1,356 @@
+// Normally mainpage styles
+$time: .7s
+$delay: .7s
+$type: ease-in-out
+
+.section
+	&.active
+		.section__bg
+			+scale(1)
+		.section__in
+			opacity: 1
+			&:hover
+				.section__img
+					.is-visible-img
+						opacity: 0
+					.is-hidden-img
+						+scale(1)
+						opacity: 1
+				.section__link
+					border-color: transparent 
+		.section__name
+			+transform(translateX(0))
+			span
+				+transform(translate(0))
+		.section__img
+			+transform(translateX(0))
+			.is-visible-img
+				+scale(1)
+		.section__info,
+		.section__link
+			+transform(translateY(0))
+	.l-center
+		padding: 0 220px
+		max-width: 100% 
+		+r(1400)
+			padding: 0 180px 
+.section__bg
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	+scale(.8)
+	+tr(transform $time $type)
+	+cover
+	background-repeat: no-repeat
+	will-change: transform
+.section__in
+	position: relative
+	display: inline-block
+	will-change: opacity
+	opacity: 0
+	+transition(opacity $time linear .4s)
+.section__info	
+	position: relative
+	z-index: 2
+	margin-bottom: 20%
+	+it
+	font-size: 20px
+	color: rgba(#fff, .7)
+	will-change: transform
+	+transform(translateY(100px))
+	+transition(transform $time $type $time)
+	+rh(800)
+		margin-bottom: 10%
+	&:after
+		content: ""
+		position: absolute
+		bottom: -24px
+		left: 0
+		width: 80px
+		height: 1px 
+		background: #fff 
+		opacity: 0.7
+.section__name
+	position: relative
+	margin-bottom: 20%
+	max-width: 420px
+	font-size: 50px
+	line-height: 1.28
+	color: #fff
+	+light
+	text-transform: uppercase
+	span
+		display: block
+		position: relative 
+		z-index: 2
+		+transform(translate(-100px, 100px))
+		+transition(transform $time $type $time)
+	+rh(800)
+		margin-bottom: 10%
+.section__img
+	position: absolute
+	width: 570px
+	height: 570px
+	position: absolute
+	left: 100px
+	top: 50%
+	margin-top: -285px
+	+transform(translateX(200px))
+	+transition(transform $time $type $time)
+	+rh(800)
+		height: 450px
+		width: 450px
+		margin-top: -225px
+	img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
+		&.is-visible-img
+			+scale(.9)
+			will-change: transform, opacity
+			+transition(transform .2s linear, opacity .2s linear)
+		&.is-hidden-img
+			+scale(0)
+			opacity: 0
+			will-change: transform, opacity
+			+transition(transform .2s linear, opacity .2s linear)
+	
+
+.section__link
+	position: relative
+	z-index: 2
+	padding-bottom: 10px
+	font-size: 10px
+	text-transform: uppercase
+	color: #fff
+	border-bottom: 1px solid  
+	+tr(border .3s)
+	+transition(transform $time $type $time, border .3s linear)
+	+transform(translateY(100px))
+	&:hover
+		border-color: transparent 
+
+.nav
+	position: absolute
+	right: 90px
+	width: 50px
+	top: 50%
+	z-index: 10
+	margin-top: -82px
+	text-align: center
+	button
+		display: block
+		position: relative
+		height: 70px
+		+transition(opacity .3s, transform .3s)
+		background: none
+		&.is-inactive	
+			opacity: .5
+			pointer-events: none
+		&:before
+			content: "" 
+			display: inline-block
+			vertical-align: middle
+		&:hover
+			opacity: 1
+.nav__prev
+	&:before
+		+s(arr-t)
+	&:hover
+		+transform(translateY(-20px))
+.nav__next
+	&:before
+		+s(arr-b)
+	&:hover
+		+transform(translateY(20px))
+.nav__counter
+	height: 24px
+	line-height: 24px
+	font-size: 20px
+	color: #fff
+	+light
+	div
+		display: inline-block
+		position: relative
+		vertical-align: middle
+		line-height: 1
+		+clr
+		width: 100%
+		&:before
+			content: ""
+			position: absolute
+			top: -5px
+			left: 12px 
+			+s(sep)
+	span
+		float: left
+		width: 50%
+		text-align: right
+		&:first-child
+			text-align: left
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

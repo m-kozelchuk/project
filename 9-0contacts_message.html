@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sales</title>
+	<meta name="viewport" content="width=1200">
+	<link rel="stylesheet" media="all" href="css/screen.css">
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/jquery.easings.min.js"></script>
+	<script src="js/lib/jquery.fullPage.min.js"></script>
+	<script src="js/lib/modernizr.custom.js"></script>
+	<script src="js/lib/masonry.pkgd.min.js"></script>
+	<script src="js/lib/imagesloaded.js"></script>
+	<script src="js/lib/classie.js"></script>
+	<script src="js/lib/AnimOnScroll.js"></script>
+	<script src="js/lib/jquery.validate.js"></script>
+	<script src="js/common.js"></script>
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+
+	<!-- BEGIN header -->
+	<header class="header js-hover">
+		<div class="header__top">
+			<button class="header__menu js-menu-toggle" type="button">
+				<i></i>
+				<span>Меню</span>
+			</button>
+			<a href="#" class="header__logo">
+				<img src="img/logo.png" alt="logo">
+			</a>
+			<a href="#" class="header__link">Шоурум</a>
+		</div>
+	</header>
+	<!-- END header -->
+
+	<!-- BEGIN menu -->
+	<div class="menu js-menu">
+		<div class="l-center">
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Компания</a></div>
+				<ul class="menu__list">
+					<li class="is-marked"><a href="#">акции</a></li>
+					<li><a href="#">Шоурум</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Портфолио</a></li>
+					<li><a href="#">Бренды</a></li>
+					<li><a href="#">Вакансии</a></li>
+					<li><a href="#">Новости</a></li>
+				</ul>
+			</div>
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Каталог</a></div>
+				<ul class="menu__list">
+					<li><a href="#">Плитка</a></li>
+					<li><a href="#">Сантехника</a></li>
+					<li><a href="#">Мебель</a></li>
+					<li><a href="#">Паркет</a></li>
+					<li><a href="#">Двери</a></li>
+					<li><a href="#">Свет</a></li>
+					<li><a href="#">кухни</a></li>
+				</ul>
+			</div>
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Контактная информация</a></div>
+				<div class="address">
+					<div class="address__title">Адрес:</div>
+					<div class="address__main">г. Минск, ул. Сурганова 61А, БЦ Зебра</div>
+				</div>
+				<div class="address">
+					<div class="address__title">Телефоны: </div>
+					<div class="address__main">+375 29 331-86-23 | +375 29 617-09-73</div>
+				</div>
+				<div class="address">
+					<div class="address__title">e-mail: </div>
+					<div class="address__main">
+						<a href="mailto:rialto@rialtogroup.by">rialto@rialtogroup.by</a>
+					</div>
+				</div>
+				<a href="#" class="btn">Обратный звонок</a>
+			</div>
+		</div>
+	</div>
+	<!-- END menu -->
+	
+	<div class="out">
+		<div class="item is-floating">
+			<div class="item item_info">
+				<div class="breadcrumbs">
+					<a href="#">Главная</a>
+				</div>
+				<div class="page-info">
+					<div class="page-info__title">Контакты</div>
+					<div class="address">
+						<div class="address__title">Адрес:</div>
+						<div class="address__main">г. Минск, ул. Сурганова 61А, БЦ Зебра</div>
+					</div>
+					<div class="address">
+						<div class="address__title">Телефоны: </div>
+						<div class="address__main">+375 29 331-86-23 | +375 29 617-09-73</div>
+					</div>
+					<div class="address">
+						<div class="address__title">e-mail: </div>
+						<div class="address__main">
+							<a href="mailto:rialto@rialtogroup.by">rialto@rialtogroup.by</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item item_info item_feedback">
+				<div class="feedback">
+					<div class="feedback__title">Обратный звонок</div>
+					<form class="js-validate">
+						<div class="field">
+							<input type="text" class="input" required name="firstname" placeholder="Имя">
+						</div>
+						<div class="field">
+							<input type="tel" class="input" required name="tel" placeholder="телефон">
+						</div>
+						<div class="field">
+							<textarea class="input input_textarea is-small" name="message" required placeholder="Здравствуйте, я..."></textarea>
+						</div>
+						<button class="btn btn_width btn_white btn_border-brown" type="submit">перезвоните мне</button>
+					</form>
+					<div class="feedback__popup js-message" style="display:block">
+						<div class="feedback__title">Спасибо!</div>
+						<p>В ближайшее время с вами <br> свяжется наш менеджер</p>
+						<button class="feedback__reload js-hide-message" type="button"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="item is-floating">
+			<div class="item item_height item_map">
+				<div class="map">
+					<div class="map__body" id="map-canvas"></div>
+				</div>
+				<script>
+				  	function initialize() {
+					    var mapOptions = {
+					      	zoom: 15,
+					      	center: new google.maps.LatLng(53.929955, 27.579271),
+					      	disableDefaultUI: true,
+					      	scrollwheel: false,
+					     	zoomControl: true,
+					    	zoomControlOptions: {
+					        	style: google.maps.ZoomControlStyle.DEFAUL,
+					        	position: google.maps.ControlPosition.RIGHT_CENTER,
+					        	right: 50
+					      	},
+					      	mapTypeId: google.maps.MapTypeId.ROADMAP
+
+					    }
+					    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+					    var image = 'img/marker.png';
+					    var myLatLng1 = new google.maps.LatLng(53.929955, 27.579271);
+
+					    var marker1 = new google.maps.Marker({
+						      position: myLatLng1,
+						      map: map,
+						      title: 'Uluru (Ayers Rock)',
+						      icon: image
+						});
+
+					    var contentString1 =	'<div style="width:200px;height: 80px">'
+								+'<p>Rialto</p>'
+								+'<p>г. Минск</p>'
+								+'<p>ул. Сурганова 61а, БЦ Зебра</p>'+
+							'</div>';
+					  	var infowindow1 = new google.maps.InfoWindow({
+						    content: contentString1
+						});
+						google.maps.event.addListener(marker1, 'click', function(){
+						    infowindow1.open(map,marker1);
+						});
+
+					}
+				  	// Asynchronous Loading
+					function loadScript() {
+					  var script = document.createElement('script');
+					  script.type = 'text/javascript';
+					  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+					      'callback=initialize';
+					  document.body.appendChild(script);
+					}
+					window.onload = loadScript;
+				</script>
+			</div>
+		</div>
+		
+		
+	</div>
+
+	<!-- BEGIN footer -->
+	<footer class="footer js-hover">
+		<div class="footer__lang">
+			<a href="#" class="is-active">Рус</a>
+			<a href="#">Eng</a>
+		</div>
+		<div class="footer__contacts">
+			<a class="link-address" href="https://www.google.com/maps" target="_blank">Минск, ул. Сурганова, 61а, БЦ Зебра</a>
+			<a href="tel:+375 17 331-86-23">+375 17 331-86-23</a>
+		</div>
+		<div class="footer__meta">
+			<a href="#">Made in flexmedia</a>
+		</div>
+	</footer>
+	<!-- END footer -->
+
+	<i class="line-bg line-bg_left js-hover"></i>
+	<i class="line-bg line-bg_right js-hover"></i>
+	
+	<div class="popup js-popup" data-popup="js-popup-order">
+		<div class="popup__in">
+			<div class="popup__title">Заказать </div>
+			<form class="js-validate">
+				<div class="field">
+					<input class="input" type="text" placeholder="Имя" required>
+				</div>
+				<div class="field">
+					<input class="input" type="tel" placeholder="телефон" required>
+				</div>
+				<div class="field">
+					<textarea class="input input input_textarea" placeholder="Мой заказ"></textarea>
+				</div>
+				<button class="btn btn_white btn_width" type="submit">отправить</button>
+			</form>
+			<button type="button" class="popup__close js-popup-close"></button>
+		</div>
+	</div>
+
+	<script src="js/lib/head.js"></script>
+</body>
+</html>
